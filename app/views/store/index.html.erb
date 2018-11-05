@@ -1,7 +1,7 @@
   <% if notice %>
     <aside id="notice"><%= notice %></aside>
   <% end %>
-
+  <%=@counter_message%>
   <h1>Your Books Catalog</h1>
 
   <ul class="catalog">
@@ -16,6 +16,7 @@
             </p>
             <div class="price">
               <%= number_to_currency(product.price) %>
+              <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
             </div>
           </li>
         <% end %>
